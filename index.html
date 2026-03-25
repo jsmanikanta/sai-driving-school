@@ -19,8 +19,8 @@
           <li><a href="travel-services.html">Travel Services</a></li>
           <li><a href="driving-school.html">Driving School</a></li>
           <li><a href="rto-services.html">RTO Services</a></li>
-          <li><a href="about.html">About Us</a></li>
           <li><a href="car-sales.html">Car sales</a></li>
+          <li><a href="about.html">About Us</a></li>
         </ul>
         <div
           class="nav-actions"
@@ -55,51 +55,43 @@
     </section>
 
     <!-- FEATURED SERVICES SECTION -->
-    <section style="background: rgba(11, 31, 58, 0.5)">
-      <div class="container">
-        <h2 class="section-title">Our Featured Services</h2>
-        <p class="section-subtitle">
-          Discover the complete range of travel and driving services we offer
-        </p>
-
-        <div class="cards-grid">
-          <!-- Service 1 -->
-          <div class="card">
-            <div class="card-icon">🌍</div>
-            <h3>Customized Tours</h3>
-            <p>
-              Explore exotic destinations with our expertly planned tour
-              packages tailored to your preferences.
-            </p>
-            <a href="travel-services.html" class="btn btn-primary"
-              >Learn More</a
-            >
-          </div>
-
-          <!-- Service 2 -->
-          <div class="card">
-            <div class="card-icon">🚘</div>
-            <h3>Buy & Sell Cars</h3>
-            <p>
-              Explore cars for sale or list your own vehicle easily. Connect
-              directly with buyers and sellers in one place.
-            </p>
-            <a href="car-sales.html" class="btn btn-primary">Explore Cars</a>
-          </div>
-
-          <!-- Service 3 -->
-          <div class="card">
-            <div class="card-icon">🏆</div>
-            <h3>Professional Driving</h3>
-            <p>
-              Master the roads with our certified driving instructors and
-              comprehensive training programs.
-            </p>
-            <a href="driving-school.html" class="btn btn-primary">Learn More</a>
-          </div>
+    <div class="cards-grid">
+      <!-- Service 1 -->
+      <div class="card card-bg one">
+        <div class="card-content">
+          <h3>Customized Tours</h3>
+          <p>
+            Explore exotic destinations with our expertly planned tour packages
+            tailored to your preferences.
+          </p>
+          <a href="travel-services.html" class="btn btn-primary">Learn More</a>
         </div>
       </div>
-    </section>
+
+      <!-- Service 2 -->
+      <div class="card card-bg two">
+        <div class="card-content">
+          <h3>Buy & Sell Cars</h3>
+          <p>
+            Explore cars for sale or list your own vehicle easily. Connect
+            directly with buyers and sellers in one place.
+          </p>
+          <a href="car-sales.html" class="btn btn-primary">Explore Cars</a>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="card card-bg three">
+        <div class="card-content">
+          <h3>Professional Driving</h3>
+          <p>
+            Master the roads with our certified driving instructors and
+            comprehensive training programs.
+          </p>
+          <a href="driving-school.html" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+    </div>
 
     <!-- DRIVING PROGRAMS SECTION -->
     <section>
@@ -112,7 +104,12 @@
         <div class="cards-grid">
           <!-- Card 1 -->
           <div class="card">
-            <div class="card-icon">🚗</div>
+            <div class="card-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2962/2962186.png"
+                alt="Steering Wheel"
+              />
+            </div>
             <h3>Complete Training</h3>
             <p>
               12 days of practical driving training with 2 hours of daily
@@ -204,48 +201,6 @@
       </div>
     </section>
 
-    <!-- TESTIMONIALS SECTION -->
-    <section>
-      <div class="container">
-        <h2 class="section-title">Customer Testimonials</h2>
-        <p class="section-subtitle">
-          See what our satisfied clients have to say
-        </p>
-
-        <div style="max-width: 700px; margin: 2rem auto">
-          <div class="testimonial">
-            <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-            <p>
-              "Sai Travels made our vacation unforgettable! The travel packages
-              were customized perfectly, and the drivers were professional and
-              courteous. Highly recommended!"
-            </p>
-            <div class="testimonial-author">- Rajesh Kumar</div>
-          </div>
-
-          <div class="testimonial">
-            <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-            <p>
-              "The driving school instructors are fantastic! I felt confident
-              within days. The beginner course taught me everything I needed to
-              know safely. Worth every penny!"
-            </p>
-            <div class="testimonial-author">- Priya Singh</div>
-          </div>
-
-          <div class="testimonial">
-            <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-            <p>
-              "Professional, punctual, and affordable. Used them for airport
-              transfers multiple times. Never disappointed. Will definitely book
-              again!"
-            </p>
-            <div class="testimonial-author">- Amit Patel</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- CONTACT CTA SECTION -->
     <section style="background: rgba(11, 31, 58, 0.5); text-align: center">
       <div class="container">
@@ -275,102 +230,22 @@
           "
         >
           <div class="footer-section">
-            <h3 style="color: var(--accent-gold); margin-bottom: 1rem">
-              Sai Travels & Driving School
-            </h3>
-            <p>
-              Your trusted partner for premium travel services and professional
-              driving education. We ensure safe, comfortable, and memorable
-              journeys.
-            </p>
-          </div>
-
-          <div class="footer-section">
-            <h4 style="color: var(--accent-gold); margin-bottom: 1rem">
-              Quick Links
-            </h4>
-            <ul style="list-style: none; padding: 0">
-              <li>
-                <a
-                  href="travel-services.html"
-                  style="
-                    color: var(--text-gray);
-                    text-decoration: none;
-                    display: block;
-                    margin-bottom: 0.5rem;
-                  "
-                  >Travel Services</a
-                >
-              </li>
-              <li>
-                <a
-                  href="driving-school.html"
-                  style="
-                    color: var(--text-gray);
-                    text-decoration: none;
-                    display: block;
-                    margin-bottom: 0.5rem;
-                  "
-                  >Driving School</a
-                >
-              </li>
-              <li>
-                <a
-                  href="rto-services.html"
-                  style="
-                    color: var(--text-gray);
-                    text-decoration: none;
-                    display: block;
-                    margin-bottom: 0.5rem;
-                  "
-                  >RTO Services</a
-                >
-              </li>
-              <li>
-                <a
-                  href="about.html"
-                  style="
-                    color: var(--text-gray);
-                    text-decoration: none;
-                    display: block;
-                    margin-bottom: 0.5rem;
-                  "
-                  >About Us</a
-                >
-              </li>
-              <li>
-                <a
-                  href="contact.html"
-                  style="
-                    color: var(--text-gray);
-                    text-decoration: none;
-                    display: block;
-                  "
-                  >Contact</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div class="footer-section">
             <h4 style="color: var(--accent-gold); margin-bottom: 1rem">
               Contact Info
             </h4>
             <p style="color: var(--text-gray); margin-bottom: 0.5rem">
-              <strong>Phone: </strong><a href="tel:+917731883789"
-                >7731883789</a
-              >
+              <strong>Phone: </strong><a href="tel:+917731883789">7731883789</a>
             </p>
             <p style="color: var(--text-gray); margin-bottom: 0.5rem">
               <strong>Email:</strong> info@saitravels.com
             </p>
             <strong>Address-1:</strong>
             <p style="color: var(--text-gray); margin-bottom: 1rem">
-            Near Penugonda Bus stand, penugonda - 534320
+              Adisakthi Durgadevi Nilayam, Main road Eletipadu - 534320
             </p>
             <strong>Address-2:</strong>
             <p style="color: var(--text-gray); margin-bottom: 1rem">
-            Adisakthi Durgadevi Nilayam, Main road Eletipadu - 534320
+              Near Penugonda Bus stand, penugonda - 534320
             </p>
           </div>
         </div>
@@ -382,11 +257,11 @@
             text-align: center;
           "
         >
-          <p>&copy; 2026 Sai Travels & Driving School. All rights reserved.</p>
           <p>
             Your trusted partner for<span class="gold-accent">Travel</span> and
             <span class="gold-accent">Driving excellence</span>
           </p>
+          <p>&copy; 2026 Sai Travels & Driving School. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -16,7 +16,34 @@
   </head>
   <body>
     <!-- Navbar space -->
-    <div class="nav-space"></div>
+    <div class="nav-space">
+      <nav>
+        <div class="nav-container">
+          <a href="index.html" class="logo">
+            <img src="images/Travel logo.png" alt="Sai Travels Logo" />
+            <span>Sai Travels</span>
+          </a>
+
+          <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="travel-services.html">Travel Services</a></li>
+          <li><a href="driving-school.html">Driving School</a></li>
+          <li><a href="rto-services.html">RTO Services</a></li>
+          <li><a href="car-sales.html">Car sales</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+
+          <!-- ADD THIS -->
+          <div class="nav-actions">
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
 
     <main class="sell-page">
       <section class="sell-hero">
@@ -122,17 +149,6 @@
                 <label for="year">Year of Manufacture</label>
                 <select id="year">
                   <option value="">Select year</option>
-                  <option>2025</option>
-                  <option>2024</option>
-                  <option>2023</option>
-                  <option>2022</option>
-                  <option>2021</option>
-                  <option>2020</option>
-                  <option>2019</option>
-                  <option>2018</option>
-                  <option>2017</option>
-                  <option>2016</option>
-                  <option>2015</option>
                 </select>
               </div>
 
@@ -191,24 +207,6 @@
                   <label for="kmDriven">KM Driven</label>
                   <input type="number" id="kmDriven" placeholder="KM" />
                 </div>
-
-                <div class="form-group">
-                  <label>Number of Owners</label>
-                  <div class="pill-group owners-group">
-                    <label class="pill-option">
-                      <input type="radio" name="owners" checked />
-                      <span>1</span>
-                    </label>
-                    <label class="pill-option">
-                      <input type="radio" name="owners" />
-                      <span>2</span>
-                    </label>
-                    <label class="pill-option">
-                      <input type="radio" name="owners" />
-                      <span>3+</span>
-                    </label>
-                  </div>
-                </div>
               </div>
 
               <div class="split-fields">
@@ -225,15 +223,6 @@
 
                 <div class="form-group">
                   <label for="location">Location</label>
-                  <select id="location">
-                    <option value="">Select city</option>
-                    <option>Hyderabad</option>
-                    <option>Bangalore</option>
-                    <option>Chennai</option>
-                    <option>Mumbai</option>
-                    <option>Pune</option>
-                    <option>Delhi</option>
-                  </select>
                 </div>
               </div>
             </div>
@@ -266,24 +255,6 @@
                   <img
                     src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=400&q=80"
                     alt="Preview 3"
-                  />
-                </div>
-                <div class="preview-item">
-                  <img
-                    src="https://images.unsplash.com/photo-1494905998402-395d579af36f?auto=format&fit=crop&w=400&q=80"
-                    alt="Preview 4"
-                  />
-                </div>
-                <div class="preview-item">
-                  <img
-                    src="https://images.unsplash.com/photo-1502161254066-6c74afbf07aa?auto=format&fit=crop&w=400&q=80"
-                    alt="Preview 5"
-                  />
-                </div>
-                <div class="preview-item">
-                  <img
-                    src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=400&q=80"
-                    alt="Preview 6"
                   />
                 </div>
               </div>
@@ -451,84 +422,6 @@
           "
         >
           <div class="footer-section">
-            <h3 style="color: var(--accent-gold); margin-bottom: 1rem">
-              Sai Travels & Driving School
-            </h3>
-            <p>
-              Your trusted partner for premium travel services and professional
-              driving education. We ensure safe, comfortable, and memorable
-              journeys.
-            </p>
-          </div>
-
-          <div class="footer-section">
-            <h4 style="color: var(--accent-gold); margin-bottom: 1rem">
-              Quick Links
-            </h4>
-            <ul style="list-style: none; padding: 0">
-              <li>
-                <a
-                  href="travel-services.html"
-                  style="
-                    color: var(--text-gray);
-                    text-decoration: none;
-                    display: block;
-                    margin-bottom: 0.5rem;
-                  "
-                  >Travel Services</a
-                >
-              </li>
-              <li>
-                <a
-                  href="driving-school.html"
-                  style="
-                    color: var(--text-gray);
-                    text-decoration: none;
-                    display: block;
-                    margin-bottom: 0.5rem;
-                  "
-                  >Driving School</a
-                >
-              </li>
-              <li>
-                <a
-                  href="rto-services.html"
-                  style="
-                    color: var(--text-gray);
-                    text-decoration: none;
-                    display: block;
-                    margin-bottom: 0.5rem;
-                  "
-                  >RTO Services</a
-                >
-              </li>
-              <li>
-                <a
-                  href="about.html"
-                  style="
-                    color: var(--text-gray);
-                    text-decoration: none;
-                    display: block;
-                    margin-bottom: 0.5rem;
-                  "
-                  >About Us</a
-                >
-              </li>
-              <li>
-                <a
-                  href="contact.html"
-                  style="
-                    color: var(--text-gray);
-                    text-decoration: none;
-                    display: block;
-                  "
-                  >Contact</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div class="footer-section">
             <h4 style="color: var(--accent-gold); margin-bottom: 1rem">
               Contact Info
             </h4>
@@ -540,11 +433,11 @@
             </p>
             <strong>Address-1:</strong>
             <p style="color: var(--text-gray); margin-bottom: 1rem">
-              Near Penugonda Bus stand, penugonda - 534320
+              Adisakthi Durgadevi Nilayam, Main road Eletipadu - 534320
             </p>
             <strong>Address-2:</strong>
             <p style="color: var(--text-gray); margin-bottom: 1rem">
-              Adisakthi Durgadevi Nilayam, Main road Eletipadu - 534320
+              Near Penugonda Bus stand, penugonda - 534320
             </p>
           </div>
         </div>
@@ -556,13 +449,46 @@
             text-align: center;
           "
         >
-          <p>&copy; 2026 Sai Travels & Driving School. All rights reserved.</p>
           <p>
             Your trusted partner for<span class="gold-accent">Travel</span> and
             <span class="gold-accent">Driving excellence</span>
           </p>
+          <p>&copy; 2026 Sai Travels & Driving School. All rights reserved.</p>
         </div>
       </div>
     </footer>
+    <script>
+      // Enhanced navbar scroll effect
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector("nav");
+        if (window.scrollY > 50) {
+          nav.style.background =
+            "linear-gradient(180deg, rgba(11, 31, 58, 0.98) 0%, rgba(14, 42, 80, 0.96) 100%)";
+          nav.style.boxShadow = "0 12px 40px rgba(0, 0, 0, 0.4)";
+        } else {
+          nav.style.background =
+            "linear-gradient(180deg, rgba(11, 31, 58, 0.98) 0%, rgba(14, 42, 80, 0.95) 100%)";
+          nav.style.boxShadow = "0 8px 32px rgba(0, 0, 0, 0.3)";
+        }
+      });
+
+      // Scroll animation for elements
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = "fadeInUp 0.8s ease forwards";
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".card, .feature-box").forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
   </body>
 </html>

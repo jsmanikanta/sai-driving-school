@@ -11,17 +11,27 @@
     <nav>
       <div class="nav-container">
         <a href="index.html" class="logo">
-          <img src="images/Travel logo.png " alt="Sai Travels Logo" />
+          <img src="images/Travel logo.png" alt="Sai Travels Logo" />
           <span>Sai Travels</span>
         </a>
+
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="travel-services.html">Travel Services</a></li>
           <li><a href="driving-school.html">Driving School</a></li>
           <li><a href="rto-services.html">RTO Services</a></li>
-          <li><a href="about.html">About Us</a></li>
           <li><a href="car-sales.html">Car sales</a></li>
+          <li><a href="about.html">About Us</a></li>
         </ul>
+
+        <!-- ADD THIS -->
+        <div class="nav-actions">
+          <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
     </nav>
 
@@ -64,216 +74,175 @@
     </section>
 
     <!-- SERVICES SECTION -->
-    <section>
-      <div class="container">
-        <h2 class="section-title">What We Offer</h2>
-        <p class="section-subtitle">
-          Choose from our diverse range of travel services
-        </p>
-
-        <div class="cards-grid">
-          <!-- Service 1: Tour Packages -->
-          <div class="card">
-            <div class="card-icon">🗺️</div>
-            <h3>Tour Packages</h3>
-            <p>
-              Customized tour packages to domestic and international
-              destinations. From mountain retreats to beach getaways, we cover
-              it all.
-            </p>
-            <ul
-              style="
-                text-align: left;
-                margin: 1rem 0;
-                color: var(--text-gray);
-                font-size: 0.9rem;
-              "
-            >
-              <li>✓ Multi-day tours</li>
-              <li>✓ Customized itineraries</li>
-              <li>✓ Hotel & transport included</li>
-              <li>✓ Expert guides</li>
-            </ul>
-            <a href="contact.html" class="btn btn-primary">Book Tour</a>
-          </div>
-
-          <!-- Service 2: Airport Transfers -->
-          <div class="card">
-            <div class="card-icon">✈️</div>
-            <h3>Airport Pickup & Drop</h3>
-            <p>
-              Reliable and punctual airport transfers. No more waiting or
-              searching for cabs. Our drivers will meet you with a nameplate.
-            </p>
-            <ul
-              style="
-                text-align: left;
-                margin: 1rem 0;
-                color: var(--text-gray);
-                font-size: 0.9rem;
-              "
-            >
-              <li>✓ Professional drivers</li>
-              <li>✓ Comfortable vehicles</li>
-              <li>✓ Affordable rates</li>
-            </ul>
-            <a href="contact.html" class="btn btn-primary">Book Now</a>
-          </div>
-
-          <!-- Service 3: Outstation Trips -->
-          <div class="card">
-            <div class="card-icon">🚗</div>
-            <h3>Outstation Trips</h3>
-            <p>
-              Weekend getaways and outstation trips to nearby cities. Perfect
-              for family vacations and group adventures.
-            </p>
-            <ul
-              style="
-                text-align: left;
-                margin: 1rem 0;
-                color: var(--text-gray);
-                font-size: 0.9rem;
-              "
-            >
-              <li>✓ Flexible duration options</li>
-              <li>✓ All-inclusive packages</li>
-              <li>✓ Safe & comfortable travel</li>
-              <li>✓ Group discounts</li>
-            </ul>
-            <a href="contact.html" class="btn btn-primary">Plan Trip</a>
-          </div>
-
-          <!-- Service 5: Group Tours -->
-          <div class="card">
-            <div class="card-icon">👥</div>
-            <h3>Group Tours</h3>
-            <p>
-              Organize group travel for corporate events, family reunions, or
-              school trips. We handle everything from transport to
-              accommodation.
-            </p>
-            <ul
-              style="
-                text-align: left;
-                margin: 1rem 0;
-                color: var(--text-gray);
-                font-size: 0.9rem;
-              "
-            >
-              <li>✓ Bulk accommodations</li>
-              <li>✓ Experienced coordinators</li>
-              <li>✓ Special group rates</li>
-              <li>✓ Full itinerary planning</li>
-            </ul>
-            <a href="contact.html" class="btn btn-primary">Inquire</a>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">🛕</div>
-            <h3>Temple Tours</h3>
-            <p>
-              Visit famous temples across Godavari and Krishna districts
-              including Vijayawada, Dwaraka Tirumala, Penugonda, and Vadapalli
-              with comfortable travel.
-            </p>
-            <ul
-              style="
-                text-align: left;
-                margin: 1rem 0;
-                color: var(--text-gray);
-                font-size: 0.9rem;
-              "
-            >
-              <li>✓ Kanaka Durga & Dwaraka Tirumala</li>
-              <li>✓ Penugonda & Vadapalli temples</li>
-              <li>✓ Same-day & multi-day trips</li>
-              <li>✓ Family-friendly packages</li>
-            </ul>
-            <a href="contact.html" class="btn btn-primary">Book Tour</a>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">🌉</div>
-            <h3>Local Sightseeing</h3>
-            <p>
-              Explore beautiful destinations across Godavari and Krishna regions
-              including beaches, rivers, and scenic city attractions.
-            </p>
-            <ul
-              style="
-                text-align: left;
-                margin: 1rem 0;
-                color: var(--text-gray);
-                font-size: 0.9rem;
-              "
-            >
-              <li>✓ Rajamahendravaram & Godavari river tours</li>
-              <li>✓ Narsapuram & coastal areas</li>
-              <li>✓ Vijayawada city sightseeing</li>
-              <li>✓ Custom local packages</li>
-            </ul>
-            <a href="contact.html" class="btn btn-primary">Explore</a>
-          </div>
+    <div class="cards-grid">
+      <!-- 1 -->
+      <div class="card card-bg to1">
+        <div class="card-content">
+          <h3>Tour Packages</h3>
+          <p>
+            Customized tour packages to domestic and international destinations.
+            From mountain retreats to beach getaways, we cover it all.
+          </p>
+          <ul>
+            <li>✓ Multi-day tours</li>
+            <li>✓ Customized itineraries</li>
+            <li>✓ Expert guides</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Book Tour</a>
         </div>
       </div>
-    </section>
+
+      <!-- 2 -->
+      <div class="card card-bg to2">
+        <div class="card-content">
+          <h3>Airport Pickup & Drop</h3>
+          <p>
+            Reliable and punctual airport transfers. No more waiting or
+            searching for cabs.
+          </p>
+          <ul>
+            <li>✓ Professional drivers</li>
+            <li>✓ Comfortable vehicles</li>
+            <li>✓ Affordable rates</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Book Now</a>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="card card-bg to3">
+        <div class="card-content">
+          <h3>Outstation Trips</h3>
+          <p>
+            Weekend getaways and outstation trips to nearby cities. Perfect for
+            family vacations.
+          </p>
+          <ul>
+            <li>✓ Flexible duration</li>
+            <li>✓ All-inclusive packages</li>
+            <li>✓ Safe travel</li>
+            <li>✓ Group discounts</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Plan Trip</a>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="card card-bg to4">
+        <div class="card-content">
+          <h3>Group Tours</h3>
+          <p>
+            Organize group travel for corporate events, family reunions, or
+            school trips.
+          </p>
+          <ul>
+            <li>✓ Bulk accommodations</li>
+            <li>✓ Coordinators</li>
+            <li>✓ Special rates</li>
+            <li>✓ Full planning</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Inquire</a>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="card card-bg to5">
+        <div class="card-content">
+          <h3>Temple Tours</h3>
+          <p>
+            Visit famous temples across Godavari and Krishna districts with
+            comfortable travel.
+          </p>
+          <ul>
+            <li>✓ Vijayawada & Dwaraka Tirumala</li>
+            <li>✓ Sri Vasavi Kanyaka parameswari temple Penugonda</li>
+            <li>✓ Same-day trips</li>
+            <li>✓ Family packages</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Book Tour</a>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="card card-bg to6">
+        <div class="card-content">
+          <h3>Local Sightseeing</h3>
+          <p>
+            Explore beaches, rivers, and scenic attractions across Godavari and
+            Krishna regions.
+          </p>
+          <ul>
+            <li>✓ River tours</li>
+            <li>✓ Coastal areas</li>
+            <li>✓ City sightseeing</li>
+            <li>✓ Custom plans</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Explore</a>
+        </div>
+      </div>
+    </div>
 
     <!-- POPULAR DESTINATIONS -->
     <section style="background: rgba(11, 31, 58, 0.5)">
       <div class="cards-grid">
-        <div class="card" style="text-align: center">
-          <div class="card-icon" style="font-size: 4rem">🛕</div>
-          <h3>Vijayawada</h3>
-          <p>
-            Visit the famous Kanaka Durga Temple and enjoy the spiritual
-            atmosphere along the Krishna River.
-          </p>
+        <div class="card card-bg place1">
+          <div class="card-content">
+            <h3>Vijayawada</h3>
+            <p>
+              Visit the famous Kanaka Durga Temple and enjoy the spiritual
+              atmosphere along the Krishna River.
+            </p>
+          </div>
         </div>
 
-        <div class="card" style="text-align: center">
-          <div class="card-icon" style="font-size: 4rem">🙏</div>
-          <h3>Penugonda</h3>
-          <p>
-            Explore Vasavi Dham, a sacred place dedicated to Vasavi Matha and an
-            important pilgrimage destination.
-          </p>
+        <div class="card card-bg place2">
+          <div class="card-content">
+            <h3>Penugonda</h3>
+            <p>
+              Explore Vasavi Dham, a sacred place dedicated to Vasavi Matha and
+              an important pilgrimage destination.
+            </p>
+          </div>
         </div>
 
-        <div class="card" style="text-align: center">
-          <div class="card-icon" style="font-size: 4rem">🌊</div>
-          <h3>Narsapuram Beach</h3>
-          <p>
-            Relax at the peaceful beach with cool sea breeze and beautiful
-            coastal views.
-          </p>
+        <div class="card card-bg place3">
+          <div class="card-content">
+            <h3>Perupaleam Beach</h3>
+            <p>
+              Relax at the peaceful beach with cool sea breeze and beautiful
+              coastal views.
+            </p>
+          </div>
         </div>
 
-        <div class="card" style="text-align: center">
-          <div class="card-icon" style="font-size: 4rem">🛕</div>
-          <h3>Dwaraka Tirumala</h3>
-          <p>
-            Visit the famous Venkateswara Temple, also known as Chinna Tirupati,
-            for a divine experience.
-          </p>
+        <div class="card card-bg place4">
+          <div class="card-content">
+            <h3>Dwaraka Tirumala</h3>
+            <p>
+              Visit the famous Venkateswara Temple, also known as Chinna
+              Tirupati, for a divine experience.
+            </p>
+          </div>
         </div>
 
-        <div class="card" style="text-align: center">
-          <div class="card-icon" style="font-size: 4rem">🌉</div>
-          <h3>Rajamahendravaram</h3>
-          <p>
-            Discover the beauty of the Godavari River, scenic bridges, and rich
-            cultural heritage.
-          </p>
+        <div class="card card-bg place5">
+          <div class="card-content">
+            <h3>Rajamahendravaram</h3>
+            <p>
+              Discover the beauty of the Godavari River, scenic bridges, and
+              rich cultural heritage.
+            </p>
+          </div>
         </div>
 
-        <div class="card" style="text-align: center">
-          <div class="card-icon" style="font-size: 4rem">🛕</div>
-          <h3>Vadapalli</h3>
-          <p>
-            Experience devotion at Sri Venkateswara Swamy Temple, a peaceful and
-            spiritual destination.
-          </p>
+        <div class="card card-bg place6">
+          <div class="card-content">
+            <h3>Vadapalli</h3>
+            <p>
+              Experience devotion at Sri Venkateswara Swamy Temple, a peaceful
+              and spiritual destination.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -309,7 +278,9 @@
             <p style="color: var(--text-gray); font-size: 0.9rem">
               Per transfer
             </p>
-            <p style="font-size: xx-small;">*<sub>Final price may vary based on distance & location</sub></p>
+            <p style="font-size: xx-small">
+              *<sub>Final price may vary based on distance & location</sub>
+            </p>
           </div>
 
           <div class="feature-box">
@@ -327,7 +298,9 @@
             <p style="color: var(--text-gray); font-size: 0.9rem">
               Up to 100km
             </p>
-            <p style="font-size: xx-small;">*<sub>Final price may vary based on distance & location</sub></p>
+            <p style="font-size: xx-small">
+              *<sub>Final price may vary based on distance & location</sub>
+            </p>
           </div>
 
           <div class="feature-box">
@@ -340,10 +313,10 @@
                 margin: 1rem 0;
               "
             >
-              Custom pricing 
+              Custom pricing
             </p>
             <p style="color: var(--text-gray); font-size: 0.9rem">
-              Based on trip distance 
+              Based on trip distance
             </p>
           </div>
 
@@ -365,7 +338,6 @@
           </div>
         </div>
       </div>
-      
     </section>
 
     <!-- CTA SECTION -->
@@ -397,84 +369,6 @@
           "
         >
           <div class="footer-section">
-            <h3 style="color: var(--accent-gold); margin-bottom: 1rem">
-              Sai Travels & Driving School
-            </h3>
-            <p>
-              Your trusted partner for premium travel services and professional
-              driving education. We ensure safe, comfortable, and memorable
-              journeys.
-            </p>
-          </div>
-
-          <div class="footer-section">
-            <h4 style="color: var(--accent-gold); margin-bottom: 1rem">
-              Quick Links
-            </h4>
-            <ul style="list-style: none; padding: 0">
-              <li>
-                <a
-                  href="travel-services.html"
-                  style="
-                    color: var(--text-gray);
-                    text-decoration: none;
-                    display: block;
-                    margin-bottom: 0.5rem;
-                  "
-                  >Travel Services</a
-                >
-              </li>
-              <li>
-                <a
-                  href="driving-school.html"
-                  style="
-                    color: var(--text-gray);
-                    text-decoration: none;
-                    display: block;
-                    margin-bottom: 0.5rem;
-                  "
-                  >Driving School</a
-                >
-              </li>
-              <li>
-                <a
-                  href="rto-services.html"
-                  style="
-                    color: var(--text-gray);
-                    text-decoration: none;
-                    display: block;
-                    margin-bottom: 0.5rem;
-                  "
-                  >RTO Services</a
-                >
-              </li>
-              <li>
-                <a
-                  href="about.html"
-                  style="
-                    color: var(--text-gray);
-                    text-decoration: none;
-                    display: block;
-                    margin-bottom: 0.5rem;
-                  "
-                  >About Us</a
-                >
-              </li>
-              <li>
-                <a
-                  href="contact.html"
-                  style="
-                    color: var(--text-gray);
-                    text-decoration: none;
-                    display: block;
-                  "
-                  >Contact</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div class="footer-section">
             <h4 style="color: var(--accent-gold); margin-bottom: 1rem">
               Contact Info
             </h4>
@@ -486,11 +380,11 @@
             </p>
             <strong>Address-1:</strong>
             <p style="color: var(--text-gray); margin-bottom: 1rem">
-              Near Penugonda Bus stand, penugonda - 534320
+              Adisakthi Durgadevi Nilayam, Main road Eletipadu - 534320
             </p>
             <strong>Address-2:</strong>
             <p style="color: var(--text-gray); margin-bottom: 1rem">
-              Adisakthi Durgadevi Nilayam, Main road Eletipadu - 534320
+              Near Penugonda Bus stand, penugonda - 534320
             </p>
           </div>
         </div>
@@ -502,15 +396,14 @@
             text-align: center;
           "
         >
-          <p>&copy; 2026 Sai Travels & Driving School. All rights reserved.</p>
           <p>
             Your trusted partner for<span class="gold-accent">Travel</span> and
             <span class="gold-accent">Driving excellence</span>
           </p>
+          <p>&copy; 2026 Sai Travels & Driving School. All rights reserved.</p>
         </div>
       </div>
     </footer>
-
     <script>
       // Enhanced navbar scroll effect
       window.addEventListener("scroll", () => {
@@ -544,11 +437,9 @@
         observer.observe(el);
       });
     </script>
-    // Contact Button //
     <a href="contact.html">
       <button class="contact-btn">Get in Touch</button>
     </a>
-    // WhatsApp Floating Button //
     <a href="https://wa.me/8074177294" class="whatsapp-float" target="_blank">
       <img
         src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
