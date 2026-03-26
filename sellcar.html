@@ -3,19 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sell Your Car</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
+    <title>Sell Your Car | Post Car Listing | Sai Travels</title>
+    <meta
+      name="description"
+      content="Sell your car easily with Sai Travels. Submit your vehicle details and get verified listing with admin approval."
     />
-
+    <link rel="icon" href="./images/Travel-logo.png" />
+    <link
+      rel="canonical"
+      href="https://saidrivingschoolandtravels.in/sellcar.html"
+    />
+    <meta property="og:title" content="Sell Your Car | Sai Travels" />
+    <meta
+      property="og:image"
+      content="https://saidrivingschoolandtravels.in/images/Travel-logo.png"
+    />
+    <meta name="theme-color" content="#0b1f3a" />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <!-- Navbar space -->
     <div class="nav-space">
       <nav>
         <div class="nav-container">
@@ -25,15 +32,14 @@
           </a>
 
           <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="travel-services.html">Travel Services</a></li>
-          <li><a href="driving-school.html">Driving School</a></li>
-          <li><a href="rto-services.html">RTO Services</a></li>
-          <li><a href="car-sales.html">Car sales</a></li>
-          <li><a href="about.html">About Us</a></li>
-        </ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="travel-services.html">Travel Services</a></li>
+            <li><a href="driving-school.html">Driving School</a></li>
+            <li><a href="rto-services.html">RTO Services</a></li>
+            <li><a href="car-sales.html">Car Sales</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
 
-          <!-- ADD THIS -->
           <div class="nav-actions">
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
               <span></span>
@@ -53,32 +59,32 @@
               <p class="sell-badge">Premium Car Marketplace</p>
               <h1>Sell Your Car Easily & Quickly</h1>
               <p class="sell-subtitle">
-                Reach thousands of buyers instantly with our trusted platform
-                and get the best value for your vehicle.
+                Fill the form below and submit your car. The listing will be
+                saved with pending status until admin approval.
               </p>
 
               <div class="hero-btns">
                 <a href="#sell-form" class="btn btn-gold">Start Selling</a>
-                <a href="#how-it-works" class="btn btn-outline">How It Works</a>
+                <a href="car-sales.html" class="btn btn-outline"
+                  >View Listings</a
+                >
               </div>
 
               <div class="hero-stats">
                 <div class="stat-card">
                   <div class="stat-icon">🚗</div>
-                  <h3>1000+</h3>
-                  <p>Cars Sold</p>
+                  <h3>Premium</h3>
+                  <p>Listing Form</p>
                 </div>
-
                 <div class="stat-card">
                   <div class="stat-icon">⚡</div>
                   <h3>Fast</h3>
-                  <p>Approval</p>
+                  <p>Submission</p>
                 </div>
-
                 <div class="stat-card">
-                  <div class="stat-icon">🛡</div>
-                  <h3>Trusted</h3>
-                  <p>Platform</p>
+                  <div class="stat-icon">🛡️</div>
+                  <h3>Secure</h3>
+                  <p>Backend Save</p>
                 </div>
               </div>
             </div>
@@ -87,7 +93,7 @@
               <div class="hero-image-card">
                 <img
                   src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80"
-                  alt="Blue premium car"
+                  alt="Sell your car"
                 />
               </div>
             </div>
@@ -99,26 +105,34 @@
         <div class="container">
           <div class="section-heading">
             <h2>Sell Car Form</h2>
-            <p>Fill in the details below to list your car on our platform.</p>
+            <p>
+              This form uses the same field names as your backend schema and
+              sends data to the correct route.
+            </p>
           </div>
 
-          <form class="sell-form-grid">
-            <!-- Section 1 -->
+          <form
+            id="sellCarForm"
+            class="sell-form-grid"
+            enctype="multipart/form-data"
+          >
             <div class="form-card">
               <h3>Section 1: Basic Details</h3>
 
               <div class="form-group">
-                <label for="carTitle">Car Title</label>
+                <label for="carTitle">Car Title *</label>
                 <input
                   type="text"
                   id="carTitle"
-                  placeholder="Enter car title"
+                  name="carTitle"
+                  required
+                  placeholder="e.g. Hyundai i20 Sportz 2021"
                 />
               </div>
 
               <div class="form-group">
-                <label for="brand">Brand</label>
-                <select id="brand">
+                <label for="brand">Brand *</label>
+                <select id="brand" name="brand" required>
                   <option value="">Select brand</option>
                   <option>Maruti Suzuki</option>
                   <option>Hyundai</option>
@@ -130,89 +144,100 @@
                   <option>BMW</option>
                   <option>Mercedes-Benz</option>
                   <option>Audi</option>
+                  <option>Skoda</option>
+                  <option>Volkswagen</option>
                 </select>
               </div>
 
               <div class="split-fields">
                 <div class="form-group">
-                  <label for="model">Model</label>
-                  <input type="text" id="model" placeholder="Model" />
+                  <label for="model">Model *</label>
+                  <input
+                    type="text"
+                    id="model"
+                    name="model"
+                    required
+                    placeholder="Model"
+                  />
                 </div>
 
                 <div class="form-group">
                   <label for="variant">Variant</label>
-                  <input type="text" id="variant" placeholder="Variant" />
+                  <input
+                    type="text"
+                    id="variant"
+                    name="variant"
+                    placeholder="Variant"
+                  />
                 </div>
               </div>
 
-              <div class="form-group">
-                <label for="year">Year of Manufacture</label>
-                <select id="year">
-                  <option value="">Select year</option>
-                </select>
-              </div>
+              <div class="split-fields">
+                <div class="form-group">
+                  <label for="year">Year of Manufacture *</label>
+                  <select id="year" name="year" required>
+                    <option value="">Select year</option>
+                  </select>
+                </div>
 
-              <div class="form-group">
-                <label for="regNo">Registration Number</label>
-                <input
-                  type="text"
-                  id="regNo"
-                  placeholder="Registration number"
-                />
+                <div class="form-group">
+                  <label for="regNo">Registration Number *</label>
+                  <input
+                    type="text"
+                    id="regNo"
+                    name="regNo"
+                    required
+                    placeholder="AP39AB1234"
+                  />
+                </div>
               </div>
             </div>
 
-            <!-- Section 2 -->
             <div class="form-card">
               <h3>Section 2: Vehicle Details</h3>
 
               <div class="form-group">
-                <label>Fuel Type</label>
+                <label>Fuel Type *</label>
                 <div class="pill-group">
                   <label class="pill-option">
-                    <input type="radio" name="fuel" checked />
+                    <input
+                      type="radio"
+                      name="fuelType"
+                      value="Petrol"
+                      checked
+                    />
                     <span>Petrol</span>
                   </label>
                   <label class="pill-option">
-                    <input type="radio" name="fuel" />
+                    <input type="radio" name="fuelType" value="Diesel" />
                     <span>Diesel</span>
                   </label>
                   <label class="pill-option">
-                    <input type="radio" name="fuel" />
+                    <input type="radio" name="fuelType" value="Electric" />
                     <span>Electric</span>
                   </label>
                   <label class="pill-option">
-                    <input type="radio" name="fuel" />
+                    <input type="radio" name="fuelType" value="CNG" />
                     <span>CNG</span>
                   </label>
                 </div>
               </div>
 
-              <div class="form-group">
-                <label>Transmission</label>
-                <div class="pill-group">
-                  <label class="pill-option">
-                    <input type="radio" name="transmission" checked />
-                    <span>Manual</span>
-                  </label>
-                  <label class="pill-option">
-                    <input type="radio" name="transmission" />
-                    <span>Automatic</span>
-                  </label>
-                </div>
-              </div>
-
               <div class="split-fields">
                 <div class="form-group">
-                  <label for="kmDriven">KM Driven</label>
-                  <input type="number" id="kmDriven" placeholder="KM" />
+                  <label for="kmDriven">KM Driven *</label>
+                  <input
+                    type="number"
+                    id="kmDriven"
+                    name="kmDriven"
+                    required
+                    placeholder="e.g. 34000"
+                  />
                 </div>
-              </div>
 
-              <div class="split-fields">
                 <div class="form-group">
-                  <label for="insurance">Insurance Status</label>
-                  <select id="insurance">
+                  <label for="insurance">Insurance Status *</label>
+                  <select id="insurance" name="insurance" required>
                     <option value="">Select status</option>
                     <option>Valid</option>
                     <option>Expired</option>
@@ -220,62 +245,59 @@
                     <option>Comprehensive</option>
                   </select>
                 </div>
+              </div>
 
-                <div class="form-group">
-                  <label for="location">Location</label>
-                </div>
+              <div class="form-group">
+                <label for="location">Location *</label>
+                <input
+                  type="text"
+                  id="location"
+                  name="location"
+                  required
+                  placeholder="e.g. Hyderabad"
+                />
               </div>
             </div>
 
-            <!-- Section 4 -->
             <div class="form-card upload-card">
-              <h3>Section 4: Upload Images</h3>
+              <h3>Section 3: Upload Images</h3>
 
               <div class="upload-box">
                 <div class="upload-icon">☁</div>
-                <h4>Drag & Drop</h4>
-                <p>Drop images here or click to upload</p>
-                <input type="file" multiple />
+                <h4>Upload Car Images</h4>
+                <p>Select up to 10 images</p>
+                <input
+                  type="file"
+                  id="images"
+                  name="images"
+                  accept="image/*"
+                  multiple
+                />
               </div>
 
-              <div class="preview-grid">
-                <div class="preview-item">
-                  <img
-                    src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=400&q=80"
-                    alt="Preview 1"
-                  />
-                </div>
-                <div class="preview-item">
-                  <img
-                    src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=400&q=80"
-                    alt="Preview 2"
-                  />
-                </div>
-                <div class="preview-item">
-                  <img
-                    src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=400&q=80"
-                    alt="Preview 3"
-                  />
-                </div>
-              </div>
+              <div class="preview-grid" id="imagePreview"></div>
             </div>
 
-            <!-- Section 3 -->
             <div class="form-card small-card">
-              <h3>Section 3: Pricing</h3>
+              <h3>Section 4: Pricing</h3>
 
               <div class="form-group">
-                <label for="price">Expected Price (₹)</label>
-                <input type="number" id="price" placeholder="Enter price" />
+                <label for="price">Expected Price (₹) *</label>
+                <input
+                  type="number"
+                  id="price"
+                  name="price"
+                  required
+                  placeholder="Enter price"
+                />
               </div>
 
               <label class="check-option">
-                <input type="checkbox" />
+                <input type="checkbox" id="negotiable" name="negotiable" />
                 <span>Negotiable</span>
               </label>
             </div>
 
-            <!-- Section 5 -->
             <div class="form-card wide-card">
               <h3>Section 5: Description</h3>
 
@@ -283,40 +305,70 @@
                 <label for="description">Car Description</label>
                 <textarea
                   id="description"
-                  placeholder="Describe your car condition, features, service history, tyre condition, mileage, accessories, and any extra details..."
+                  name="description"
+                  placeholder="Describe condition, features, service history, tyre condition, mileage, accessories and extra details..."
                 ></textarea>
               </div>
             </div>
 
-            <!-- Section 6 -->
             <div class="form-card small-card">
               <h3>Section 6: Contact Details</h3>
 
               <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" placeholder="Your name" />
+                <label for="name">Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Your name"
+                />
               </div>
 
               <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" placeholder="Phone number" />
+                <label for="phone">Phone Number *</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  placeholder="Phone number"
+                />
               </div>
 
               <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Email address" />
+                <label for="email">Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="Email address"
+                />
               </div>
 
               <label class="check-option">
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  id="whatsappAvailable"
+                  name="whatsappAvailable"
+                />
                 <span>WhatsApp available</span>
               </label>
             </div>
 
             <div class="submit-wrap">
-              <button type="submit" class="btn btn-gold submit-btn">
+              <button
+                type="submit"
+                class="btn btn-gold submit-btn"
+                id="submitBtn"
+              >
                 Post Your Car
               </button>
+            </div>
+
+            <div class="submit-wrap">
+              <p id="formMessage" class="sell-form-message"></p>
             </div>
           </form>
         </div>
@@ -327,8 +379,8 @@
           <div class="section-heading">
             <h2>Why Sell With Us</h2>
             <p>
-              Get a smooth and premium selling experience with better reach and
-              trusted support.
+              Better reach, clean presentation, and a premium listing
+              experience.
             </p>
           </div>
 
@@ -336,74 +388,25 @@
             <div class="feature-card">
               <div class="feature-icon">📢</div>
               <h3>Instant Buyer Reach</h3>
-              <p>
-                Your listing reaches interested buyers quickly through our car
-                marketplace.
-              </p>
+              <p>Your listing reaches interested buyers quickly.</p>
             </div>
 
             <div class="feature-card">
               <div class="feature-icon">✅</div>
-              <h3>Verified Leads</h3>
-              <p>
-                Get genuine enquiries and reduce spam with a trusted platform
-                flow.
-              </p>
+              <h3>Verified Flow</h3>
+              <p>Listings go through approval before appearing publicly.</p>
             </div>
 
             <div class="feature-card">
               <div class="feature-icon">🤝</div>
-              <h3>Hassle-Free Process</h3>
-              <p>
-                List your car, share details, and connect with buyers in a clean
-                process.
-              </p>
+              <h3>Easy Process</h3>
+              <p>Submit details, upload images, and wait for admin approval.</p>
             </div>
 
             <div class="feature-card">
               <div class="feature-icon">💰</div>
-              <h3>Best Price Guarantee</h3>
-              <p>
-                Showcase your car professionally and improve chances of getting
-                a better offer.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="how-it-works" class="steps-section">
-        <div class="container">
-          <div class="section-heading">
-            <h2>How It Works</h2>
-            <p>List your car in a few simple steps.</p>
-          </div>
-
-          <div class="steps-grid">
-            <div class="step-card">
-              <span class="step-number">01</span>
-              <h3>Submit Details</h3>
-              <p>Enter your car details, pricing, and contact information.</p>
-            </div>
-
-            <div class="step-card">
-              <span class="step-number">02</span>
-              <h3>Upload Photos</h3>
-              <p>Add clear images of your car to attract more buyers.</p>
-            </div>
-
-            <div class="step-card">
-              <span class="step-number">03</span>
-              <h3>Get Verified</h3>
-              <p>
-                We review your listing so it looks trusted and professional.
-              </p>
-            </div>
-
-            <div class="step-card">
-              <span class="step-number">04</span>
-              <h3>Sell Easily</h3>
-              <p>Connect with buyers and close the deal with confidence.</p>
+              <h3>Best Pricing</h3>
+              <p>Showcase your car with clear pricing and details.</p>
             </div>
           </div>
         </div>
@@ -429,7 +432,13 @@
               <strong>Phone: </strong><a href="tel:+917731883789">7731883789</a>
             </p>
             <p style="color: var(--text-gray); margin-bottom: 0.5rem">
-              <strong>Email:</strong> info@saitravels.com
+              <strong>Email:</strong>
+              <a
+                href="mailto:info@saidrivingschoolandtravels.in"
+                style="cursor: pointer"
+              >
+                info@saidrivingschoolandtravels.in
+              </a>
             </p>
             <strong>Address-1:</strong>
             <p style="color: var(--text-gray); margin-bottom: 1rem">
@@ -457,38 +466,49 @@
         </div>
       </div>
     </footer>
+
+    <button
+      id="back-to-top"
+      style="
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: var(--accent-gold);
+        color: var(--primary-dark);
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 1000;
+        box-shadow: var(--shadow-md);
+      "
+    >
+      ↑
+    </button>
+    <button class="contact-btn">Get in Touch</button>
+
+    <a href="contact.html">
+      <button class="contact-btn">Get in Touch</button>
+    </a>
+    <a
+      href="https://wa.me/+917731883789"
+      class="whatsapp-float"
+      target="_blank"
+    >
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+        alt="WhatsApp"
+      />
+    </a>
+
     <script>
-      // Enhanced navbar scroll effect
-      window.addEventListener("scroll", () => {
-        const nav = document.querySelector("nav");
-        if (window.scrollY > 50) {
-          nav.style.background =
-            "linear-gradient(180deg, rgba(11, 31, 58, 0.98) 0%, rgba(14, 42, 80, 0.96) 100%)";
-          nav.style.boxShadow = "0 12px 40px rgba(0, 0, 0, 0.4)";
-        } else {
-          nav.style.background =
-            "linear-gradient(180deg, rgba(11, 31, 58, 0.98) 0%, rgba(14, 42, 80, 0.95) 100%)";
-          nav.style.boxShadow = "0 8px 32px rgba(0, 0, 0, 0.3)";
-        }
-      });
-
-      // Scroll animation for elements
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -100px 0px",
-      };
-
-      const observer = new IntersectionObserver(function (entries) {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.style.animation = "fadeInUp 0.8s ease forwards";
-          }
-        });
-      }, observerOptions);
-
-      document.querySelectorAll(".card, .feature-box").forEach((el) => {
-        observer.observe(el);
-      });
+      window.CAR_API_BASE_URL = "http://localhost:4300/cars";
     </script>
+    <script src="sellcar.js"></script>
   </body>
 </html>

@@ -3,15 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us | Sai Travels & Driving School</title>
+    <title>Contact Us | Sai Driving School & Travels</title>
+    <meta
+      name="description"
+      content="Contact Sai Driving School & Travels for driving classes, travel bookings, RTO services, and car sales inquiries."
+    />
+    <link rel="icon" href="./images/Travel-logo.png" />
+    <link
+      rel="canonical"
+      href="https://saidrivingschoolandtravels.in/contact.html"
+    />
+    <meta property="og:title" content="Contact Sai Travels" />
+    <meta
+      property="og:image"
+      content="https://saidrivingschoolandtravels.in/images/Travel-logo.png"
+    />
+    <meta name="theme-color" content="#0b1f3a" />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <!-- NAVBAR -->
     <nav>
       <div class="nav-container">
         <a href="index.html" class="logo">
-          <img src="images/Travel logo.png" alt="Sai Travels Logo" />
+          <img src="images/Travel-logo.png" alt="Sai Travels Logo" />
           <span>Sai Travels</span>
         </a>
 
@@ -20,11 +35,10 @@
           <li><a href="travel-services.html">Travel Services</a></li>
           <li><a href="driving-school.html">Driving School</a></li>
           <li><a href="rto-services.html">RTO Services</a></li>
-          <li><a href="car-sales.html">Car sales</a></li>
+          <li><a href="car-Sales.html">Car Sales</a></li>
           <li><a href="about.html">About Us</a></li>
         </ul>
 
-        <!-- ADD THIS -->
         <div class="nav-actions">
           <button class="mobile-menu-toggle" aria-label="Toggle menu">
             <span></span>
@@ -35,7 +49,6 @@
       </div>
     </nav>
 
-    <!-- PAGE HEADER -->
     <section class="hero" style="height: 50vh; margin-bottom: 2rem">
       <div class="hero-content">
         <h1>Get in Touch</h1>
@@ -43,7 +56,6 @@
       </div>
     </section>
 
-    <!-- CONTACT FORM SECTION -->
     <section style="background: rgba(11, 31, 58, 0.5)">
       <div class="container">
         <h2 class="section-title">Send us a Message</h2>
@@ -51,7 +63,7 @@
           Fill out the form below and we'll get back to you as soon as possible
         </p>
 
-        <form class="contact-form" id="contactForm" method="POST">
+        <form class="contact-form" id="contactForm">
           <div class="form-group">
             <label for="name">Full Name *</label>
             <input type="text" id="name" name="name" required />
@@ -63,26 +75,16 @@
           </div>
 
           <div class="form-group">
-            <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" name="phone" required />
+            <label for="mobilenumber">Phone Number *</label>
+            <input type="tel" id="mobilenumber" name="mobilenumber" required />
           </div>
 
           <div class="form-group">
-            <label for="subject">Subject *</label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              placeholder="Travel Inquiry / Driving Classes / Other"
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="service">Service Interest *</label>
+            <label for="type">Service Type *</label>
             <select
-              id="service"
-              name="service"
+              id="type"
+              name="type"
+              required
               style="
                 width: 100%;
                 padding: 0.8rem;
@@ -90,64 +92,21 @@
                 border: 1px solid rgba(244, 180, 0, 0.2);
                 border-radius: 5px;
                 color: var(--text-light);
-                font-family: &quot;Poppins&quot;, sans-serif;
                 cursor: pointer;
               "
-              required
             >
-              <option value="" style="color: var(--primary-dark)">
-                -- Select Service --
-              </option>
-              <option value="tour-packages" style="color: var(--primary-dark)">
-                Tour Packages
-              </option>
-              <option
-                value="airport-transfer"
-                style="color: var(--primary-dark)"
-              >
-                Airport Pickup & Drop
-              </option>
-              <option value="outstation" style="color: var(--primary-dark)">
-                Outstation Trips
-              </option>
-              <option value="car-rental" style="color: var(--primary-dark)">
-                Luxury Car Rental
-              </option>
-              <option
-                value="beginner-course"
-                style="color: var(--primary-dark)"
-              >
-                Beginner Driving Course
-              </option>
-              <option
-                value="advanced-course"
-                style="color: var(--primary-dark)"
-              >
-                Advanced Driving Training
-              </option>
-              <option
-                value="license-assistance"
-                style="color: var(--primary-dark)"
-              >
-                License Assistance
-              </option>
-              <option
-                value="refresher-course"
-                style="color: var(--primary-dark)"
-              >
-                Refresher Course
-              </option>
-              <option value="other" style="color: var(--primary-dark)">
-                Other
-              </option>
+              <option value="">-- Select Service --</option>
+              <option value="driving_school">Driving School</option>
+              <option value="travels">Travels</option>
+              <option value="rto">RTO Services</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label for="message">Message *</label>
+            <label for="description">Message *</label>
             <textarea
-              id="message"
-              name="message"
+              id="description"
+              name="description"
               required
               placeholder="Tell us about your inquiry..."
             ></textarea>
@@ -156,10 +115,21 @@
           <button
             type="submit"
             class="btn btn-primary"
+            id="submitBtn"
             style="width: 100%; padding: 1rem; font-size: 1rem; cursor: pointer"
           >
             Send Message
           </button>
+
+          <p
+            id="formMessage"
+            style="
+              margin-top: 1rem;
+              text-align: center;
+              font-size: 0.95rem;
+              color: var(--text-gray);
+            "
+          ></p>
         </form>
 
         <p
@@ -175,7 +145,6 @@
       </div>
     </section>
 
-    <!-- CONTACT INFORMATION -->
     <section>
       <div class="container">
         <h2 class="section-title">Contact Information</h2>
@@ -184,420 +153,88 @@
         </p>
 
         <div class="contact-info">
-          <!-- Phone -->
           <div class="info-box">
             <div class="info-box-icon">📞</div>
             <h4>Phone Number</h4>
             <p>
               <a
-                href="tel:+919876543210"
+                href="tel:+917731883789"
                 style="
                   color: var(--text-light);
                   text-decoration: none;
                   font-weight: 500;
                 "
-                >+91 98765 43210</a
               >
-            </p>
-            <p
-              style="
-                margin-top: 0.5rem;
-                color: var(--text-gray);
-                font-size: 0.85rem;
-              "
-            >
-              Available 7 AM - 10 PM
+                +91 77318 83789
+              </a>
             </p>
           </div>
 
-          <!-- Email -->
           <div class="info-box">
             <div class="info-box-icon">✉️</div>
             <h4>Email Address</h4>
             <p>
               <a
-                href="mailto:info@saitravels.com"
+                href="mailto:info@saidrivingschoolandtravels.in"
                 style="
                   color: var(--text-light);
                   text-decoration: none;
                   font-weight: 500;
                 "
-                >info@saitravels.com</a
               >
-            </p>
-            <p
-              style="
-                margin-top: 0.5rem;
-                color: var(--text-gray);
-                font-size: 0.85rem;
-              "
-            >
-              Support@saitravels.com
+                info@saidrivingschoolandtravels.in
+              </a>
             </p>
           </div>
 
-          <!-- Address -->
           <div class="info-box">
             <div class="info-box-icon">📍</div>
             <h4>Office Address</h4>
-            <p>Penugonda, West Godavari, Andhra Pradesh 110001, India</p>
-            <p
-              style="
-                margin-top: 0.5rem;
-                color: var(--text-gray);
-                font-size: 0.85rem;
-              "
-            >
-              Open: Mon-Sun 9 AM - 9 PM
-            </p>
+            <p>Adisakthi Durgadevi Nilayam, Main road Eletipadu - 534320</p>
+            <p>Near Penugonda Bus stand, penugonda - 534320</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WHATSAPP & SOCIAL SECTION -->
-    <section style="background: rgba(11, 31, 58, 0.5)">
-      <div class="container">
-        <h2 class="section-title">Quick Contact Options</h2>
-        <p class="section-subtitle">
-          Connect with us instantly through your preferred platform
-        </p>
+    <div class="maps-container">
+      <!-- MAP 1 -->
+      <a
+        href="https://maps.app.goo.gl/EcCScrieS7BrPYCX7"
+        target="_blank"
+        class="map-card"
+      >
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3821.8591300572093!2d81.73741757514918!3d16.68393128408818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTbCsDQxJzAyLjIiTiA4McKwNDQnMjQuMCJF!5e0!3m2!1sen!2sin!4v1774526359908!5m2!1sen!2sin"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
 
-        <div
-          style="
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-          "
-        >
-          <!-- WhatsApp -->
-          <div
-            style="
-              background: rgba(14, 42, 80, 0.5);
-              border: 2px solid rgba(244, 180, 0, 0.3);
-              border-radius: 10px;
-              padding: 2rem;
-              text-align: center;
-              cursor: pointer;
-              transition: all 0.3s ease;
-            "
-            onmouseover="
-              this.style.borderColor = 'var(--accent-gold)';
-              this.style.transform = 'translateY(-5px)';
-            "
-            onmouseout="
-              this.style.borderColor = 'rgba(244, 180, 0, 0.3)';
-              this.style.transform = 'translateY(0)';
-            "
-          >
-            <a
-              href="https://wa.me/919876543210"
-              target="_blank"
-              style="text-decoration: none; color: inherit"
-            >
-              <p style="font-size: 3rem; margin-bottom: 1rem">💬</p>
-              <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem">
-                WhatsApp
-              </h4>
-              <p style="color: var(--text-gray)">Chat with us on WhatsApp</p>
-              <p
-                style="
-                  color: var(--accent-gold);
-                  margin-top: 1rem;
-                  font-weight: 600;
-                "
-              >
-                +91 98765 43210
-              </p>
-            </a>
-          </div>
-
-          <!-- Call Direct -->
-          <div
-            style="
-              background: rgba(14, 42, 80, 0.5);
-              border: 2px solid rgba(244, 180, 0, 0.3);
-              border-radius: 10px;
-              padding: 2rem;
-              text-align: center;
-              cursor: pointer;
-              transition: all 0.3s ease;
-            "
-            onmouseover="
-              this.style.borderColor = 'var(--accent-gold)';
-              this.style.transform = 'translateY(-5px)';
-            "
-            onmouseout="
-              this.style.borderColor = 'rgba(244, 180, 0, 0.3)';
-              this.style.transform = 'translateY(0)';
-            "
-          >
-            <a
-              href="tel:+919876543210"
-              style="text-decoration: none; color: inherit"
-            >
-              <p style="font-size: 3rem; margin-bottom: 1rem">☎️</p>
-              <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem">
-                Call Us
-              </h4>
-              <p style="color: var(--text-gray)">Direct phone support</p>
-              <p
-                style="
-                  color: var(--accent-gold);
-                  margin-top: 1rem;
-                  font-weight: 600;
-                "
-              >
-                +91 98765 43210
-              </p>
-            </a>
-          </div>
-
-          <!-- Email -->
-          <div
-            style="
-              background: rgba(14, 42, 80, 0.5);
-              border: 2px solid rgba(244, 180, 0, 0.3);
-              border-radius: 10px;
-              padding: 2rem;
-              text-align: center;
-              cursor: pointer;
-              transition: all 0.3s ease;
-            "
-            onmouseover="
-              this.style.borderColor = 'var(--accent-gold)';
-              this.style.transform = 'translateY(-5px)';
-            "
-            onmouseout="
-              this.style.borderColor = 'rgba(244, 180, 0, 0.3)';
-              this.style.transform = 'translateY(0)';
-            "
-          >
-            <a
-              href="mailto:info@saitravels.com"
-              style="text-decoration: none; color: inherit"
-            >
-              <p style="font-size: 3rem; margin-bottom: 1rem">📧</p>
-              <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem">
-                Email
-              </h4>
-              <p style="color: var(--text-gray)">Send us an email</p>
-              <p
-                style="
-                  color: var(--accent-gold);
-                  margin-top: 1rem;
-                  font-weight: 600;
-                "
-              >
-                info@saitravels.com
-              </p>
-            </a>
-          </div>
+        <div class="map-info">
+          <h4>Branch 1</h4>
+          <p>Main Office Location</p>
         </div>
-      </div>
-    </section>
+      </a>
 
-    <!-- OFFICE HOURS -->
-    <section>
-      <div class="container">
-        <h2 class="section-title">Office Hours</h2>
-        <p class="section-subtitle">
-          We're available to assist you at these times
-        </p>
+      <!-- MAP 2 -->
+      <a
+        href="https://maps.app.goo.gl/aDpTM7oDd9njLZPn9"
+        target="_blank"
+        class="map-card"
+      >
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3822.377706003475!2d81.7440556!3d16.6579722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1774526308725!5m2!1sen!2sin"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
 
-        <div
-          style="
-            background: rgba(14, 42, 80, 0.5);
-            border: 1px solid rgba(244, 180, 0, 0.2);
-            border-radius: 10px;
-            padding: 2.5rem;
-            max-width: 600px;
-            margin: 2rem auto;
-          "
-        >
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem">
-            <div>
-              <h4 style="color: var(--accent-gold); margin-bottom: 1rem">
-                Weekdays
-              </h4>
-              <p style="color: var(--text-light); font-size: 1.1rem">
-                Monday - Friday
-              </p>
-              <p
-                style="
-                  color: var(--accent-gold);
-                  font-weight: 600;
-                  font-size: 1.2rem;
-                "
-              >
-                9:00 AM - 9:00 PM
-              </p>
-            </div>
-            <div>
-              <h4 style="color: var(--accent-gold); margin-bottom: 1rem">
-                Weekends
-              </h4>
-              <p style="color: var(--text-light); font-size: 1.1rem">
-                Saturday - Sunday
-              </p>
-              <p
-                style="
-                  color: var(--accent-gold);
-                  font-weight: 600;
-                  font-size: 1.2rem;
-                "
-              >
-                10:00 AM - 8:00 PM
-              </p>
-            </div>
-          </div>
-          <div
-            style="
-              margin-top: 2rem;
-              padding-top: 2rem;
-              border-top: 1px solid rgba(244, 180, 0, 0.2);
-            "
-          >
-            <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem">
-              Holidays
-            </h4>
-            <p style="color: var(--text-gray)">
-              Closed on national holidays. Emergency support available 24/7.
-            </p>
-          </div>
+        <div class="map-info">
+          <h4>Branch 2</h4>
+          <p>Secondary Office Location</p>
         </div>
-      </div>
-    </section>
+      </a>
+    </div>
 
-    <!-- FAQ SECTION -->
-    <section style="background: rgba(11, 31, 58, 0.5)">
-      <div class="container">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-subtitle">Quick answers to common questions</p>
-
-        <div style="max-width: 700px; margin: 2rem auto">
-          <div
-            style="
-              background: rgba(14, 42, 80, 0.5);
-              border-left: 4px solid var(--accent-gold);
-              padding: 1.5rem;
-              margin-bottom: 1rem;
-              border-radius: 5px;
-            "
-          >
-            <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem">
-              How quickly will you respond to my inquiry?
-            </h4>
-            <p style="color: var(--text-gray)">
-              We aim to respond within 24 hours during business days. For urgent
-              matters, please call us directly.
-            </p>
-          </div>
-
-          <div
-            style="
-              background: rgba(14, 42, 80, 0.5);
-              border-left: 4px solid var(--accent-gold);
-              padding: 1.5rem;
-              margin-bottom: 1rem;
-              border-radius: 5px;
-            "
-          >
-            <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem">
-              Do you offer emergency support?
-            </h4>
-            <p style="color: var(--text-gray)">
-              Yes! Emergency support is available 24/7. Please call our
-              emergency hotline at +91 98765 43210 for immediate assistance.
-            </p>
-          </div>
-
-          <div
-            style="
-              background: rgba(14, 42, 80, 0.5);
-              border-left: 4px solid var(--accent-gold);
-              padding: 1.5rem;
-              margin-bottom: 1rem;
-              border-radius: 5px;
-            "
-          >
-            <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem">
-              Can I book services online?
-            </h4>
-            <p style="color: var(--text-gray)">
-              Yes! You can submit your inquiry through our contact form above,
-              and we'll assist you with bookings and payments.
-            </p>
-          </div>
-
-          <div
-            style="
-              background: rgba(14, 42, 80, 0.5);
-              border-left: 4px solid var(--accent-gold);
-              padding: 1.5rem;
-              margin-bottom: 1rem;
-              border-radius: 5px;
-            "
-          >
-            <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem">
-              What payment methods do you accept?
-            </h4>
-            <p style="color: var(--text-gray)">
-              We accept cash, credit cards, debit cards, bank transfers, UPI,
-              and digital wallets. All payments are secure and encrypted.
-            </p>
-          </div>
-
-          <div
-            style="
-              background: rgba(14, 42, 80, 0.5);
-              border-left: 4px solid var(--accent-gold);
-              padding: 1.5rem;
-              border-radius: 5px;
-            "
-          >
-            <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem">
-              Is there a cancellation policy?
-            </h4>
-            <p style="color: var(--text-gray)">
-              Yes, we have a flexible cancellation policy. Cancellations made 48
-              hours in advance are usually eligible for full refunds. Contact us
-              for details.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MAP SECTION -->
-    <section>
-      <div class="container">
-        <h2 class="section-title">Find Us on Map</h2>
-        <p class="section-subtitle">Visit our office location in New Delhi</p>
-
-        <div
-          style="
-            margin-top: 2rem;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-          "
-        >
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.5328261131316!2d77.1952!3d28.6139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2606ec1a4d7%3A0xa77b1ca96c5d89b9!2sNew%20Delhi!5e0!3m2!1sen!2sin!4v1234567890"
-            width="100%"
-            height="400"
-            style="border: none"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade;"
-          ></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
     <footer>
       <div class="container">
         <div
@@ -617,7 +254,13 @@
               <strong>Phone: </strong><a href="tel:+917731883789">7731883789</a>
             </p>
             <p style="color: var(--text-gray); margin-bottom: 0.5rem">
-              <strong>Email:</strong> info@saitravels.com
+              <strong>Email:</strong>
+              <a
+                href="mailto:info@saidrivingschoolandtravels.in"
+                style="cursor: pointer"
+              >
+                info@saidrivingschoolandtravels.in
+              </a>
             </p>
             <strong>Address-1:</strong>
             <p style="color: var(--text-gray); margin-bottom: 1rem">
@@ -645,243 +288,22 @@
         </div>
       </div>
     </footer>
-    
-    <a href="contact.html">
+
+    <a href="index.html">
       <button class="contact-btn">Get in Touch</button>
     </a>
-    <a href="https://wa.me/8074177294" class="whatsapp-float" target="_blank">
+
+    <a
+      href="https://wa.me/+917731883789"
+      class="whatsapp-float"
+      target="_blank"
+    >
       <img
         src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
         alt="WhatsApp"
       />
     </a>
 
-    <footer>
-      <div class="container">
-        <div
-          class="footer-content"
-          style="
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-          "
-        >
-          <div class="footer-section">
-            <h3 style="color: var(--accent-gold); margin-bottom: 1rem">
-              Sai Travels & Driving School
-            </h3>
-            <p>
-              Your trusted partner for premium travel services and professional
-              driving education. We ensure safe, comfortable, and memorable
-              journeys.
-            </p>
-          </div>
-
-          <div class="footer-section">
-            <h4 style="color: var(--accent-gold); margin-bottom: 1rem">
-              Quick Links
-            </h4>
-            <ul style="list-style: none; padding: 0">
-              <li>
-                <a
-                  href="travel-services.html"
-                  style="
-                    color: var(--text-gray);
-                    text-decoration: none;
-                    display: block;
-                    margin-bottom: 0.5rem;
-                  "
-                  >Travel Services</a
-                >
-              </li>
-              <li>
-                <a
-                  href="driving-school.html"
-                  style="
-                    color: var(--text-gray);
-                    text-decoration: none;
-                    display: block;
-                    margin-bottom: 0.5rem;
-                  "
-                  >Driving School</a
-                >
-              </li>
-              <li>
-                <a
-                  href="rto-services.html"
-                  style="
-                    color: var(--text-gray);
-                    text-decoration: none;
-                    display: block;
-                    margin-bottom: 0.5rem;
-                  "
-                  >RTO Services</a
-                >
-              </li>
-              <li>
-                <a
-                  href="about.html"
-                  style="
-                    color: var(--text-gray);
-                    text-decoration: none;
-                    display: block;
-                    margin-bottom: 0.5rem;
-                  "
-                  >About Us</a
-                >
-              </li>
-              <li>
-                <a
-                  href="contact.html"
-                  style="
-                    color: var(--text-gray);
-                    text-decoration: none;
-                    display: block;
-                  "
-                  >Contact</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div class="footer-section">
-            <h4 style="color: var(--accent-gold); margin-bottom: 1rem">
-              Contact Info
-            </h4>
-            <p style="color: var(--text-gray); margin-bottom: 0.5rem">
-              <strong>Phone: </strong><a href="tel:+917731883789">7731883789</a>
-            </p>
-            <p style="color: var(--text-gray); margin-bottom: 0.5rem">
-              <strong>Email:</strong> info@saitravels.com
-            </p>
-            <strong>Address-1:</strong>
-            <p style="color: var(--text-gray); margin-bottom: 1rem">
-              Near Penugonda Bus stand, penugonda - 534320
-            </p>
-            <strong>Address-2:</strong>
-            <p style="color: var(--text-gray); margin-bottom: 1rem">
-              Adisakthi Durgadevi Nilayam, Main road Eletipadu - 534320
-            </p>
-          </div>
-        </div>
-
-        <div
-          style="
-            border-top: 1px solid rgba(244, 180, 0, 0.2);
-            padding-top: 2rem;
-            text-align: center;
-          "
-        >
-          <p>&copy; 2026 Sai Travels & Driving School. All rights reserved.</p>
-          <p>
-            Your trusted partner for<span class="gold-accent">Travel</span> and
-            <span class="gold-accent">Driving excellence</span>
-          </p>
-        </div>
-      </div>
-    </footer>
-    <script>
-      // Mobile menu toggle
-      const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
-      const navUl = document.querySelector("nav ul");
-
-      mobileMenuToggle.addEventListener("click", () => {
-        mobileMenuToggle.classList.toggle("active");
-        navUl.classList.toggle("active");
-      });
-
-      // Close mobile menu when clicking a link
-      document.querySelectorAll("nav a").forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenuToggle.classList.remove("active");
-          navUl.classList.remove("active");
-        });
-      });
-
-      // Search overlay toggle
-      const searchToggle = document.querySelector(".search-toggle");
-      const searchOverlay = document.querySelector(".search-overlay");
-      const searchClose = document.querySelector(".search-close");
-
-      searchToggle.addEventListener("click", () => {
-        searchOverlay.style.opacity = "1";
-        searchOverlay.style.visibility = "visible";
-      });
-
-      searchClose.addEventListener("click", () => {
-        searchOverlay.style.opacity = "0";
-        searchOverlay.style.visibility = "hidden";
-      });
-
-      // Close search on overlay click
-      searchOverlay.addEventListener("click", (e) => {
-        if (e.target === searchOverlay) {
-          searchOverlay.style.opacity = "0";
-          searchOverlay.style.visibility = "hidden";
-        }
-      });
-
-      // Smooth scroll for navigation
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({ behavior: "smooth" });
-          }
-        });
-      });
-
-      // Enhanced navbar scroll effect
-      window.addEventListener("scroll", () => {
-        const nav = document.querySelector("nav");
-        if (window.scrollY > 50) {
-          nav.style.background =
-            "linear-gradient(180deg, rgba(11, 31, 58, 0.98) 0%, rgba(14, 42, 80, 0.96) 100%)";
-          nav.style.boxShadow = "0 12px 40px rgba(0, 0, 0, 0.4)";
-        } else {
-          nav.style.background =
-            "linear-gradient(180deg, rgba(11, 31, 58, 0.98) 0%, rgba(14, 42, 80, 0.95) 100%)";
-          nav.style.boxShadow = "0 8px 32px rgba(0, 0, 0, 0.3)";
-        }
-      });
-
-      // Scroll animation for elements
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -100px 0px",
-      };
-
-      const observer = new IntersectionObserver(function (entries) {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.style.animation = "fadeInUp 0.8s ease forwards";
-          }
-        });
-      }, observerOptions);
-
-      document
-        .querySelectorAll(".card, .feature-box, .testimonial")
-        .forEach((el) => {
-          observer.observe(el);
-        });
-
-      // Back to top button
-      const backToTopBtn = document.getElementById("back-to-top");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-          backToTopBtn.style.opacity = "1";
-          backToTopBtn.style.visibility = "visible";
-        } else {
-          backToTopBtn.style.opacity = "0";
-          backToTopBtn.style.visibility = "hidden";
-        }
-      });
-
-      backToTopBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    </script>
+    <script src="contact.js"></script>
   </body>
 </html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Admin Panel | Sai Travels</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img src="images/Travel logo.png" alt="Sai Travels Logo" />
+          <span>Sai Travels</span>
+        </a>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="car-sales.html">Car Sales</a></li>
+          <li><a href="sellcar.html">Sell Car</a></li>
+          <li><a href="car-admin.html">Admin</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="car-admin-page">
+      <section class="car-admin-hero">
+        <div class="container">
+          <div class="admin-hero-content">
+            <div>
+              <span class="admin-badge">Admin Panel</span>
+              <h1>Manage Car Approval Status</h1>
+              <p>
+                Review pending car submissions and approve, reject, or delete
+                them directly from this page.
+              </p>
+            </div>
+
+            <div class="admin-hero-actions">
+              <button class="btn btn-primary" id="refreshBtn">Refresh</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="admin-summary-section">
+        <div class="container">
+          <div class="admin-summary-grid">
+            <div class="admin-summary-card">
+              <h3 id="pendingCount">0</h3>
+              <p>Pending Cars</p>
+            </div>
+            <div class="admin-summary-card">
+              <h3>Approve</h3>
+              <p>Send listing live</p>
+            </div>
+            <div class="admin-summary-card">
+              <h3>Reject</h3>
+              <p>Keep invalid listings out</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="admin-list-section">
+        <div class="container">
+          <div class="admin-section-head">
+            <h2 class="section-title">Pending Car Listings</h2>
+            <p class="section-subtitle">
+              Only cars with pending status are shown here.
+            </p>
+          </div>
+
+          <div id="adminMessage" class="admin-message"></div>
+          <div id="adminLoading" class="cars-state-message">
+            Loading pending cars...
+          </div>
+          <div id="adminEmpty" class="cars-state-message" style="display: none">
+            No pending cars found.
+          </div>
+
+          <div id="adminCarList" class="admin-car-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      window.CAR_API_BASE_URL = "http://localhost:4300/cars";
+    </script>
+    <script src="car-admin.js"></script>
+  </body>
+</html>
