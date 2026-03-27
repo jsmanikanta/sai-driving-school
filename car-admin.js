@@ -10,7 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const adminMessage = document.getElementById("adminMessage");
   const pendingCount = document.getElementById("pendingCount");
 
-  const API_BASE_URL = window.CAR_API_BASE_URL || "https://sai-driving-school-backend.onrender.com";
+  const RAW_API_BASE_URL =
+    window.CAR_API_BASE_URL || "https://sai-driving-school-backend.onrender.com";
+  const API_BASE_URL = RAW_API_BASE_URL.replace(/\/+$/, "");
+
+  const ENDPOINTS = {
+    pending: `${API_BASE_URL}/cars/admin/pending`,
+    approve: (id) => `${API_BASE_URL}/cars/admin/approve/${id}`,
+    reject: (id) => `${API_BASE_URL}/cars/admin/reject/${id}`,
+    delete: (id) => `${API_BASE_URL}/cars/admin/${id}`,
+  };
 
   if (mobileMenuToggle && navUl) {
     mobileMenuToggle.addEventListener("click", () => {
@@ -40,41 +49,80 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  async function fetchPendingCars() {
-    adminLoading.style.display = "block";
-    adminEmpty.style.display = "none";
-    adminCarList.innerHTML = "";
-    adminMessage.textContent = "";
+  function setMessage(message, type = "") {
+    if (!adminMessage) return;
+    adminMessage.textContent = message;
     adminMessage.className = "admin-message";
+    if (type) adminMessage.classList.add(type);
+  }
+
+  async function parseResponse(response) {
+    const rawText = await response.text();
 
     try {
-      const response = await fetch(`${API_BASE_URL}/admin/pending`);
-      const rawText = await response.text();
-      const data = rawText ? JSON.parse(rawText) : {};
+      return rawText ? JSON.parse(rawText) : {};
+    } catch {
+      return { message: rawText || `HTTP ${response.status}` };
+    }
+  }
+
+  function formatPrice(price) {
+    return Number(price || 0).toLocaleString("en-IN");
+  }
+
+  function escapeHtml(value) {
+    return String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#39;");
+  }
+
+  async function fetchPendingCars() {
+    if (adminLoading) adminLoading.style.display = "block";
+    if (adminEmpty) adminEmpty.style.display = "none";
+    if (adminCarList) adminCarList.innerHTML = "";
+    setMessage("");
+    if (pendingCount) pendingCount.textContent = "0";
+
+    try {
+      const response = await fetch(ENDPOINTS.pending, {
+        method: "GET",
+      });
+
+      const data = await parseResponse(response);
 
       if (!response.ok) {
         throw new Error(data.message || `HTTP ${response.status}`);
       }
 
       const cars = Array.isArray(data.data) ? data.data : [];
-      pendingCount.textContent = cars.length;
+      if (pendingCount) pendingCount.textContent = String(cars.length);
 
       if (!cars.length) {
-        adminEmpty.style.display = "block";
+        if (adminEmpty) {
+          adminEmpty.style.display = "block";
+          adminEmpty.textContent = "No pending cars found.";
+        }
         return;
       }
 
       renderCars(cars);
     } catch (error) {
       console.error("Fetch pending cars error:", error);
-      adminEmpty.style.display = "block";
-      adminEmpty.textContent = error.message || "Failed to load pending cars.";
+      if (adminEmpty) {
+        adminEmpty.style.display = "block";
+        adminEmpty.textContent = error.message || "Failed to load pending cars.";
+      }
     } finally {
-      adminLoading.style.display = "none";
+      if (adminLoading) adminLoading.style.display = "none";
     }
   }
 
   function renderCars(cars) {
+    if (!adminCarList) return;
+
     adminCarList.innerHTML = "";
 
     cars.forEach((car) => {
@@ -83,18 +131,21 @@ document.addEventListener("DOMContentLoaded", () => {
           ? car.images[0]
           : "https://via.placeholder.com/600x400?text=No+Image";
 
+      const title =
+        car.carTitle || `${car.brand || ""} ${car.model || ""}`.trim() || "Car";
+
       const card = document.createElement("div");
       card.className = "admin-car-card";
 
       card.innerHTML = `
         <div class="admin-car-image">
-          <img src="${escapeHtml(image)}" alt="${escapeHtml(car.carTitle || "Car")}" />
+          <img src="${escapeHtml(image)}" alt="${escapeHtml(title)}" />
         </div>
 
         <div class="admin-car-content">
           <div class="admin-car-top">
             <span class="admin-status pending">Pending</span>
-            <h3>${escapeHtml(car.carTitle || `${car.brand} ${car.model}`)}</h3>
+            <h3>${escapeHtml(title)}</h3>
             <p class="admin-price">₹${formatPrice(car.price)}</p>
           </div>
 
@@ -141,25 +192,22 @@ document.addEventListener("DOMContentLoaded", () => {
   function attachActionEvents() {
     document.querySelectorAll(".approve-btn").forEach((btn) => {
       btn.addEventListener("click", async () => {
-        const id = btn.dataset.id;
-        await approveCar(id);
+        await approveCar(btn.dataset.id);
       });
     });
 
     document.querySelectorAll(".reject-btn").forEach((btn) => {
       btn.addEventListener("click", async () => {
-        const id = btn.dataset.id;
         const reason = prompt("Enter rejection reason:") || "";
-        await rejectCar(id, reason);
+        await rejectCar(btn.dataset.id, reason);
       });
     });
 
     document.querySelectorAll(".delete-btn").forEach((btn) => {
       btn.addEventListener("click", async () => {
-        const id = btn.dataset.id;
         const ok = confirm("Delete this car permanently?");
         if (ok) {
-          await deleteCar(id);
+          await deleteCar(btn.dataset.id);
         }
       });
     });
@@ -167,13 +215,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function approveCar(id) {
     try {
-      setMessage("Updating status...", "");
-      const response = await fetch(`${API_BASE_URL}/admin/approve/${id}`, {
+      setMessage("Updating status...");
+      const response = await fetch(ENDPOINTS.approve(id), {
         method: "PUT",
       });
 
-      const rawText = await response.text();
-      const data = rawText ? JSON.parse(rawText) : {};
+      const data = await parseResponse(response);
 
       if (!response.ok) {
         throw new Error(data.message || `HTTP ${response.status}`);
@@ -189,8 +236,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function rejectCar(id, rejectionReason) {
     try {
-      setMessage("Updating status...", "");
-      const response = await fetch(`${API_BASE_URL}/admin/reject/${id}`, {
+      setMessage("Updating status...");
+      const response = await fetch(ENDPOINTS.reject(id), {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -198,8 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
         body: JSON.stringify({ rejectionReason }),
       });
 
-      const rawText = await response.text();
-      const data = rawText ? JSON.parse(rawText) : {};
+      const data = await parseResponse(response);
 
       if (!response.ok) {
         throw new Error(data.message || `HTTP ${response.status}`);
@@ -215,13 +261,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function deleteCar(id) {
     try {
-      setMessage("Deleting car...", "");
-      const response = await fetch(`${API_BASE_URL}/admin/${id}`, {
+      setMessage("Deleting car...");
+      const response = await fetch(ENDPOINTS.delete(id), {
         method: "DELETE",
       });
 
-      const rawText = await response.text();
-      const data = rawText ? JSON.parse(rawText) : {};
+      const data = await parseResponse(response);
 
       if (!response.ok) {
         throw new Error(data.message || `HTTP ${response.status}`);
@@ -235,29 +280,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function setMessage(message, type) {
-    adminMessage.textContent = message;
-    adminMessage.className = "admin-message";
-
-    if (type) {
-      adminMessage.classList.add(type);
-    }
+  if (refreshBtn) {
+    refreshBtn.addEventListener("click", fetchPendingCars);
   }
-
-  function formatPrice(price) {
-    return Number(price || 0).toLocaleString("en-IN");
-  }
-
-  function escapeHtml(value) {
-    return String(value)
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#39;");
-  }
-
-  refreshBtn.addEventListener("click", fetchPendingCars);
 
   fetchPendingCars();
 });

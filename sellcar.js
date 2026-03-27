@@ -10,7 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const imagesInput = document.getElementById("images");
   const imagePreview = document.getElementById("imagePreview");
 
-  const API_BASE_URL = window.CAR_API_BASE_URL || "https://sai-driving-school-backend.onrender.com";
+  const API_BASE_URL =
+    window.CAR_API_BASE_URL ||
+    "https://sai-driving-school-backend.onrender.com";
+  const SELL_CAR_ENDPOINT = `${API_BASE_URL}/cars/add`;
 
   if (mobileMenuToggle && navUl) {
     mobileMenuToggle.addEventListener("click", () => {
@@ -41,7 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function populateYears() {
+    if (!yearSelect) return;
     const currentYear = new Date().getFullYear();
+    yearSelect.innerHTML = `<option value="">Select year</option>`;
     for (let year = currentYear; year >= 1995; year--) {
       const option = document.createElement("option");
       option.value = year;
@@ -51,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function previewImages(files) {
+    if (!imagePreview) return;
     imagePreview.innerHTML = "";
 
     Array.from(files)
@@ -85,8 +91,15 @@ document.addEventListener("DOMContentLoaded", () => {
       submitBtn.textContent = "Submitting...";
 
       try {
-        const formData = new FormData();
+        const selectedFuel = document.querySelector(
+          'input[name="fuelType"]:checked',
+        );
 
+        if (!selectedFuel) {
+          throw new Error("Please select fuel type.");
+        }
+
+        const formData = new FormData();
         formData.append(
           "carTitle",
           document.getElementById("carTitle").value.trim(),
@@ -102,10 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "regNo",
           document.getElementById("regNo").value.trim().toUpperCase(),
         );
-        formData.append(
-          "fuelType",
-          document.querySelector('input[name="fuelType"]:checked').value,
-        );
+        formData.append("fuelType", selectedFuel.value);
         formData.append("kmDriven", document.getElementById("kmDriven").value);
         formData.append(
           "insurance",
@@ -134,14 +144,14 @@ document.addEventListener("DOMContentLoaded", () => {
             : "false",
         );
 
-        const files = imagesInput.files;
+        const files = imagesInput ? imagesInput.files : [];
         Array.from(files)
           .slice(0, 10)
           .forEach((file) => {
             formData.append("images", file);
           });
 
-        const response = await fetch(`${API_BASE_URL}/add`, {
+        const response = await fetch(SELL_CAR_ENDPOINT, {
           method: "POST",
           body: formData,
         });
@@ -162,11 +172,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         formMessage.style.color = "#4ade80";
-        formMessage.textContent = data.message || "Car submitted successfully.";
+        formMessage.textContent =
+          data.message ||
+          "Car submitted successfully. Waiting for admin approval.";
 
         form.reset();
-        imagePreview.innerHTML = "";
-        yearSelect.innerHTML = `<option value="">Select year</option>`;
+        if (imagePreview) imagePreview.innerHTML = "";
         populateYears();
       } catch (error) {
         console.error("Sell car submit error:", error);
